@@ -1,7 +1,10 @@
+"use client";
+
+import { IKImage } from "imagekitio-next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
+const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
 const menuList = [
   {
     id: 1,
@@ -118,12 +121,13 @@ const Left = () => {
       </div>
       <div className="flex w-[95%] items-center  justify-between py-1 px-5 hover:bg-textGray rounded-full  max-3xl:hidden transition-all duration-200 cursor-pointer">
         <div>
-          <Image
-            src="/general/avatar.png"
+          <IKImage
+            urlEndpoint={urlEndpoint}
+            path="/general/avatar.png"
             alt="user logo "
-            width={30}
-            height={30}
-            className="rounded-full"
+            width={50}
+            height={50}
+            className="rounded-full w-[38px]"
           />
         </div>
         <div className=" flex flex-col  text-sm">
