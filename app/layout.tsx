@@ -16,9 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-[1000px]">
+      <body className="">
         <div className="px-2 flex sticky top-0 justify-between mx-auto max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl  3xl:max-w-screen-3xl 4xl:max-w-screen-4xl  ">
-          <div className="h-screen pr-12  ">
+          <div className="h-screen 3xl:pr-16  ">
             <Left />
           </div>
           <div className="flex-1 border-borderGray lg:min-w-[600px] border-x-1 ">

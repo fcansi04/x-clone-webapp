@@ -4,6 +4,7 @@ import { IKImage } from "imagekitio-next";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useState } from "react";
 const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
 const menuList = [
   {
@@ -69,6 +70,12 @@ const menuList = [
 ];
 
 const Left = () => {
+  const [media, setMedia] = useState<File | null>(null);
+  const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setMedia(e.target.files[0]);
+    }
+  };
   return (
     <div className=" h-screen   pl-2 flex flex-col justify-between max-3xl:mr-2 pb-2 ">
       <div className="flex flex-col gap-2 items-center  3xl:pr-10">
@@ -95,7 +102,7 @@ const Left = () => {
               >
                 <Image
                   src={`icons/${item.icon}`}
-                  alt="logo"
+                  alt="logo "
                   width={28}
                   height={28}
                 />
@@ -130,6 +137,7 @@ const Left = () => {
             className="rounded-full w-[38px]"
           />
         </div>
+
         <div className=" flex flex-col  text-sm">
           <span>name</span>
           <span>UserName</span>
